@@ -23,12 +23,14 @@ class DateController extends Controller
             $result['b'] = 0; // Count days
             $result['sundays'] = []; // Store date string
             // Loop between date and get end of each month
-            for ($d = $date_start; $d->lte($date_end);$d->modify('first day of next month')->endOfMonth()) {
+            for ($d = $date_start; $d->lte($date_end);$d->modify('first day of next month')) {
+                // Get only end of month
+                $d->endOfMonth();
                 // Check if it sunday
                 if($d->isSunday()) {
                     $result['sundays'][] = $d->format('d/m/Y');
                     $result['b'] += 1;
-                }
+                }                
             }
         
         }

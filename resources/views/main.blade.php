@@ -73,8 +73,8 @@
                     <div>There are <strong>{{ number_format($a) }}</strong> days between <strong>{{ $_GET['date_start'] }}</strong> and <strong>{{ $_GET['date_end'] }}</strong> (both days inclusive)</div>
                     <div>There are <strong>{{ number_format($b) }}</strong> days between <strong>{{ $_GET['date_start'] }}</strong> and <strong>{{ $_GET['date_end'] }}</strong> (both days inclusive) where the last day of the month is a Sunday.</div>
                     <div>And, those dates are:</div>
-                    @for($i=0;$i< count($fridays);$i++)
-                        <div>{{$i+1}} {{ $fridays[$i] }} Sun</div>
+                    @for($i=0;$i< count($sundays);$i++)
+                        <div>{{$i+1}} {{ $sundays[$i] }} Sun</div>
                     @endfor
                 @endif
             </div>
